@@ -1,106 +1,166 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Montefiore Square Revitalization</title>
+    <title>Montefiore Square Reimagined</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS (from Eventually template) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
     <style>
-        body {
-            font-family: 'Helvetica', sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 2em 1em;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        nav {
+        /* Custom styles for Before/After section */
+        .before-after {
             display: flex;
-            justify-content: center;
-            background-color: #34495e;
-        }
-        nav a {
-            color: white;
-            padding: 1em 2em;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            background-color: #1abc9c;
-        }
-        section {
-            padding: 4em 1em;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        section h2 {
-            text-align: center;
-            margin-bottom: 2em;
-            font-size: 2em;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 2em;
+            margin: 2em 0;
         }
-        .image-container img {
+        .before-after img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        footer {
+        .before-after-caption {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+        section h2 {
+            margin-top: 3em;
+        }
+        footer form input[type="text"],
+        footer form input[type="email"] {
+            padding: 0.8em;
+            margin: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+        footer form input[type="submit"] {
+            padding: 0.8em 1.2em;
+            border: none;
             background-color: #2c3e50;
             color: white;
-            text-align: center;
-            padding: 2em 1em;
-            margin-top: 4em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer form input[type="submit"]:hover {
+            background-color: #1abc9c;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Montefiore Square Revitalization</h1>
-        <p>Transforming Harlem's public space for community, safety, and engagement</p>
-    </header>
 
-    <nav>
-        <a href="#before">Before</a>
-        <a href="#after">After</a>
-    </nav>
+<!-- Header -->
+<header id="header">
+    <h1>Montefiore Square Reimagined</h1>
+    <p>
+        A youth-centered redesign transforming Harlem’s public plaza<br />
+        into a vibrant, social, and interactive hub.
+    </p>
+</header>
 
-    <section id="before">
-        <h2>Before</h2>
-        <div class="image-container">
-            <img src="images/montefiore-before.jpg" alt="Montefiore Square Before Revitalization">
-        </div>
-        <p style="text-align:center; margin-top:1em;">
-            The park currently has minimal greenery, sparse seating, and limited pedestrian engagement. The open space feels underutilized.
+<!-- Main -->
+<section id="main">
+
+    <!-- About -->
+    <section>
+        <h2>About the Space</h2>
+        <p>
+            Montefiore Square, located in Harlem, New York, sits at a major intersection
+            with strong pedestrian flow. Despite its recent redesign, the space remains
+            underutilized—especially by teens and young people.
+        </p>
+        <p>
+            This project proposes a transformation focused on interaction, safety,
+            culture, and community engagement.
         </p>
     </section>
 
-    <section id="after">
-        <h2>After</h2>
-        <div class="image-container">
-            <img src="images/montefiore-after.jpg" alt="Montefiore Square After Revitalization">
+    <!-- Before / After Images -->
+    <section>
+        <h2>Before & After</h2>
+        <div class="before-after">
+            <div>
+                <img src="file_00000000379071fd963363899b9ea018.png" alt="Montefiore Square Before">
+                <div class="before-after-caption">Before</div>
+            </div>
+            <div>
+                <img src="file_00000000d57471fd883d06aaea9637b0.png" alt="Montefiore Square After">
+                <div class="before-after-caption">After</div>
+            </div>
         </div>
-        <p style="text-align:center; margin-top:1em;">
-            The redesigned square features lush landscaping, benches, walking paths, bike lanes, and spaces for social and recreational activity, attracting more visitors and fostering community.
+        <p style="text-align:center;">
+            The park's redesign introduces greenery, social seating, and walking paths,
+            making it more vibrant and engaging for visitors.
         </p>
     </section>
 
-    <footer>
-        &copy; 2026 Montefiore Square Project | Designed for Academic Review
-    </footer>
+    <!-- Vision -->
+    <section>
+        <h2>Our Vision</h2>
+        <ul>
+            <li><strong>AI Chatbot Hub:</strong> Interactive kiosk for surveys, directions, and event discovery.</li>
+            <li><strong>Performance Space:</strong> Open mic stage for music, poetry, and youth events.</li>
+            <li><strong>Social Seating:</strong> Comfortable areas for studying, relaxing, and gathering.</li>
+            <li><strong>Night Lighting:</strong> LED lighting to improve safety and nighttime energy.</li>
+            <li><strong>Pop-Up Market:</strong> Rotating vendors, food stands, and student-run businesses.</li>
+        </ul>
+    </section>
+
+    <!-- Why It Matters -->
+    <section>
+        <h2>Why This Matters</h2>
+        <p>
+            Public spaces shape how communities interact. By designing Montefiore Square
+            for youth engagement, we create a safer, more active, and culturally rich
+            environment.
+        </p>
+        <p>
+            Increased foot traffic leads to stronger local businesses, better safety,
+            and a stronger sense of community identity.
+        </p>
+    </section>
+
+    <!-- AI Section -->
+    <section>
+        <h2>AI Integration</h2>
+        <p>
+            An AI-powered chatbot (built using n8n workflows) will allow visitors to:
+        </p>
+        <ul>
+            <li>Submit real-time feedback</li>
+            <li>Vote on future events</li>
+            <li>Discover activities happening in the plaza</li>
+        </ul>
+        <p>
+            This ensures the space evolves based on the community’s needs.
+        </p>
+    </section>
+
+</section>
+
+<!-- Footer / CTA -->
+<footer id="footer">
+    <p><strong>Help shape the future of Montefiore Square</strong></p>
+    <p>Share your ideas through our AI-powered survey system.</p>
+
+    <form>
+        <input type="text" name="name" placeholder="Your Name" />
+        <input type="email" name="email" placeholder="Your Email" />
+        <input type="submit" value="Share Your Thoughts" />
+    </form>
+
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+    </ul>
+</footer>
+
 </body>
 </html>
