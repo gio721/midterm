@@ -1,62 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Montefiore Square</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Montefiore Square Reimagined</title>
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+/* Global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                url("images/montefiore_mockup.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 2em;
+    background: rgba(0,0,0,0.75);
+    border-radius: 12px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 2.5em;
+    padding: 1em;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.2s; }
+section:nth-child(2) { animation-delay: 0.4s; }
+section:nth-child(3) { animation-delay: 0.6s; }
+section:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Headings */
+h1, h2 {
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    border-bottom: 2px solid #4c7cff;
+    padding-bottom: 0.3em;
+}
+
+/* Lists */
+ul {
+    padding-left: 1.2em;
+}
+
+/* Images */
+img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+}
+
+/* Buttons */
+button {
+    background: #4c7cff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #345edb;
+    transform: scale(1.05);
+}
+
+/* Fake chatbot via checkbox */
+#chat-toggle {
+    display: none;
+}
+
+label[for="chat-toggle"] {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4c7cff;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+#chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: rgba(0,0,0,0.95);
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+    flex-direction: column;
+    color: white;
+    z-index: 1000;
+}
+
+#chat-toggle:checked + label + #chat-box {
+    display: flex;
+}
+
+#chat-box p {
+    background: #222;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+/* Form */
+form input, form textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+form input[type="submit"] {
+    background: #4c7cff;
+    color: white;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background: #345edb;
+}
+
+/* Fake confirmation */
+form:focus-within + .confirmation {
+    display: block;
+}
+
+.confirmation {
+    display: none;
+    color: #4cff7c;
+    margin-top: 0.5em;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Welcome to Montefiore Square</h1>
-      <p>A vibrant space for teens, students, and youth to connect, relax, and create!</p>
-      <p>Explore events, meet friends, and share your thoughts with us!</p>
-    </div>
-  </header>
+<main>
 
-  <!-- Features / Descriptions Section -->
-  <section class="features">
+<section>
+    <h1>Welcome to Montefiore Square</h1>
+    <p>A vibrant space for teens, students, and youth to connect, relax, and create!</p>
+    <p>Explore events, meet friends, and share your thoughts with us!</p>
+</section>
+
+<section>
     <h2>What You Can Do Here</h2>
-    <div class="feature-list">
-      <div class="feature-item">
-        <h3>Live Music & Events</h3>
-        <p>Enjoy performances, workshops, and community events happening all year round.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Interactive Kiosk</h3>
-        <p>Give feedback and participate in surveys to help shape the future of Montefiore Square.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Games & Recreation</h3>
-        <p>Play table tennis, chess, or just hang out with friends in our open plaza areas.</p>
-      </div>
-    </div>
-  </section>
+    <ul>
+        <li><strong>Live Music & Events</strong>: Enjoy performances, workshops, and community events happening all year round.</li>
+        <li><strong>Interactive Kiosk</strong>: Give feedback and participate in surveys to help shape the future of Montefiore Square.</li>
+        <li><strong>Games & Recreation</strong>: Play table tennis, chess, or just hang out with friends in our open plaza areas.</li>
+    </ul>
+</section>
 
-  <!-- Share Your Thoughts Section -->
-  <section class="feedback">
+<section>
     <h2>Share Your Thoughts</h2>
-    <form id="feedback-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your message..." required></textarea>
-      <button type="submit">Submit</button>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your message..." required></textarea>
+        <input type="submit" value="Submit">
     </form>
-    <p id="feedback-response"></p>
-  </section>
+    <div class="confirmation">✅ Thank you! Your input helps shape the future of Montefiore Square.</div>
+</section>
 
-  <!-- Fake Chatbot Section -->
-  <section class="chatbot">
+<section>
     <h2>Ask Our Chatbot</h2>
-    <div class="chat-log" id="chat-log"></div>
-    <input type="text" id="chat-input" placeholder="Type your message...">
-    <button id="chat-submit">Send</button>
-  </section>
+    <input type="checkbox" id="chat-toggle">
+    <label for="chat-toggle">💬</label>
+    <div id="chat-box">
+        <p>Hello! I’m your AI assistant. You can imagine responses like:</p>
+        <p><em>User:</em> Can we have music here?<br><em>Bot:</em> Live performances and open mic nights will activate the space.</p>
+        <p><em>User:</em> Food vendors?<br><em>Bot:</em> Pop-up markets and food trucks are included in the design!</p>
+    </div>
+</section>
 
-  <script src="script.js"></script>
+</main>
 </body>
 </html>
