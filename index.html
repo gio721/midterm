@@ -1,232 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Montefiore Square Reimagined</title>
-<link rel="stylesheet" href="assets/css/main.css">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Project Montefiore | Reclaiming the Square</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Midterm Customizations: Harlem Green & Granite Theme */
+			:root {
+				--park-green: #2d5a27;
+				--granite-gray: #3a3d40;
+				--accent-gold: #f4b400;
+			}
 
-<style>
-/* Global styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-                url("images/montefiore_mockup.png") no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-}
+			#bg:after {
+				background-image: linear-gradient(135deg, rgba(45, 90, 39, 0.85), rgba(58, 61, 64, 0.9)) !important;
+			}
 
-main {
-    max-width: 900px;
-    margin: auto;
-    padding: 2em;
-    background: rgba(0,0,0,0.75);
-    border-radius: 12px;
-}
+			h1 {
+				font-weight: 900 !important;
+				letter-spacing: 0.1em !important;
+				text-transform: uppercase;
+				color: #fff;
+			}
 
-/* Sections */
-section {
-    margin-bottom: 2.5em;
-    padding: 1em;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
-    transform: translateY(30px);
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
-}
+			#signup-form input[type="submit"] {
+				background-color: var(--park-green) !important;
+				box-shadow: inset 0 0 0 2px var(--park-green) !important;
+				transition: all 0.3s ease;
+			}
 
-section:nth-child(1) { animation-delay: 0.2s; }
-section:nth-child(2) { animation-delay: 0.4s; }
-section:nth-child(3) { animation-delay: 0.6s; }
-section:nth-child(4) { animation-delay: 0.8s; }
-section:nth-child(5) { animation-delay: 1s; }
+			#signup-form input[type="submit"]:hover {
+				background-color: transparent !important;
+				color: var(--accent-gold) !important;
+				box-shadow: inset 0 0 0 2px var(--accent-gold) !important;
+			}
 
-@keyframes fadeInUp {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+			.proposal-box {
+				background: rgba(0, 0, 0, 0.2);
+				padding: 1.5rem;
+				border-radius: 8px;
+				margin: 2rem 0;
+				border-left: 4px solid var(--accent-gold);
+			}
 
-/* Headings */
-h1, h2 {
-    margin-bottom: 0.5em;
-}
+			.feature-list {
+				display: flex;
+				justify-content: center;
+				list-style: none;
+				padding: 0;
+				margin-top: 2rem;
+			}
 
-h2 {
-    border-bottom: 2px solid #4c7cff;
-    padding-bottom: 0.3em;
-}
+			.feature-list li {
+				margin: 0 1.5rem;
+				font-size: 0.8rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				border-bottom: 1px solid rgba(255,255,255,0.3);
+			}
 
-/* Lists */
-ul {
-    padding-left: 1.2em;
-}
+			/* Background Image Override */
+			#bg {
+				background-image: url("https://images.unsplash.com/photo-1518235506717-e1ed3307a49c?auto=format&fit=crop&q=80") !important;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-/* Images */
-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 1em;
-    transition: transform 0.4s ease;
-}
+		<header id="header">
+				<h1>Montefiore Square</h1>
+				<p>A vision to transform the 138th & Broadway corridor into <br />
+				West Harlem's premier pedestrian commons.</p>
+			</header>
 
-img:hover {
-    transform: scale(1.03);
-}
+		<div class="proposal-box">
+				<p>By prioritizing <strong>community commerce</strong> and <strong>student safety</strong>, we propose 
+				converting underutilized granite terraces into active hubs. Our plan features permanent 
+				open-air markets, solar-powered study kiosks for CCNY students, and high-visibility 
+				pedestrian safety improvements.</p>
+			</div>
 
-/* Buttons */
-button {
-    background: #4c7cff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+		<form id="signup-form" method="post" action="#">
+				<input type="email" name="email" id="email" placeholder="Email Address to Support" />
+				<input type="submit" value="Endorse the Plan" />
+			</form>
 
-button:hover {
-    background: #345edb;
-    transform: scale(1.05);
-}
+		<footer id="footer">
+				<ul class="feature-list">
+					<li><strong>Safety:</strong> Vision Zero Lighting</li>
+					<li><strong>Culture:</strong> Harlem Heritage Murals</li>
+					<li><strong>Connectivity:</strong> Smart Wayfinding</li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Project Montefiore 2024.</li><li>138th St & Broadway, NYC</li>
+				</ul>
+			</footer>
 
-/* Fake chatbot via checkbox */
-#chat-toggle {
-    display: none;
-}
+		<script src="assets/js/main.js"></script>
 
-label[for="chat-toggle"] {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #4c7cff;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-#chat-box {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 300px;
-    max-height: 400px;
-    background: rgba(0,0,0,0.95);
-    border-radius: 10px;
-    padding: 15px;
-    display: none;
-    flex-direction: column;
-    color: white;
-    z-index: 1000;
-}
-
-#chat-toggle:checked + label + #chat-box {
-    display: flex;
-}
-
-#chat-box p {
-    background: #222;
-    padding: 8px;
-    border-radius: 8px;
-    margin: 5px 0;
-}
-
-/* Form */
-form input, form textarea {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-}
-
-form input[type="submit"] {
-    background: #4c7cff;
-    color: white;
-    cursor: pointer;
-}
-
-form input[type="submit"]:hover {
-    background: #345edb;
-}
-
-/* Fake confirmation */
-form:focus-within + .confirmation {
-    display: block;
-}
-
-.confirmation {
-    display: none;
-    color: #4cff7c;
-    margin-top: 0.5em;
-}
-</style>
-</head>
-
-<body>
-
-<main>
-
-<!-- Problem Section -->
-<section>
-    <h1>Montefiore Square: Current Challenge</h1>
-    <p>Montefiore Square has strong pedestrian flow but lacks youth engagement, interactive elements, and vibrant community spaces. Many teens, students, and residents pass through without meaningful experiences.</p>
-</section>
-
-<!-- Vision Section -->
-<section>
-    <h2>Our Vision</h2>
-    <ul>
-        <li>🤖 AI Chatbot Hub for information and surveys</li>
-        <li>🎤 Performance Space for live music and events</li>
-        <li>🪑 Social seating and recreational areas</li>
-        <li>🌃 Night lighting to improve safety and aesthetics</li>
-        <li>🛍️ Pop-up markets for food & crafts</li>
-    </ul>
-</section>
-
-<!-- Proposal Section -->
-<section>
-    <h2>Design Proposal</h2>
-    <p>The proposed redesign transforms Montefiore Square into a pedestrian-friendly, youth-centered plaza. It encourages social interaction, creativity, and community engagement through flexible spaces, seating, and event areas.</p>
-    <img src="images/montefiore_mockup.png" alt="Reimagined Montefiore Square">
-</section>
-
-<!-- Form Section -->
-<section>
-    <h2>Share Your Thoughts</h2>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your message..." required></textarea>
-        <input type="submit" value="Submit">
-    </form>
-    <div class="confirmation">✅ Thank you! Your input helps shape the future of Montefiore Square.</div>
-</section>
-
-<!-- Chatbot Section -->
-<section>
-    <h2>Ask Our Chatbot</h2>
-    <input type="checkbox" id="chat-toggle">
-    <label for="chat-toggle">💬</label>
-    <div id="chat-box">
-        <p>Hello! I’m your AI assistant. Sample interactions:</p>
-        <p><em>User:</em> Can we have music here?<br><em>Bot:</em> Live performances and open mic nights will activate the space.</p>
-        <p><em>User:</em> Food vendors?<br><em>Bot:</em> Pop-up markets and food trucks are included in the design!</p>
-        <p><em>User:</em> Safe at night?<br><em>Bot:</em> Night lighting and active spaces improve safety.</p>
-    </div>
-</section>
-
-</main>
-</body>
+	</body>
 </html>
