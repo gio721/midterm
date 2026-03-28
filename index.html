@@ -5,17 +5,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Eventually CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
 
-    <!-- Custom Styling -->
     <style>
         body {
-            background-image: url("images/montefiore_mockup.png");
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                        url("images/montefiore_mockup.png");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
         }
 
         #main {
@@ -27,11 +29,19 @@
         }
 
         section {
-            margin-bottom: 2em;
+            margin-bottom: 2.5em;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid #4c7cff;
             padding-bottom: 0.3em;
         }
 
@@ -43,16 +53,23 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
+            transition: all 0.3s ease;
         }
 
         button:hover {
             background: #345edb;
+            transform: scale(1.05);
         }
 
         img {
             width: 100%;
             border-radius: 10px;
             margin-top: 1em;
+            transition: transform 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.03);
         }
 
         input {
@@ -61,98 +78,185 @@
             border-radius: 5px;
             border: none;
         }
+
+        input[type="submit"] {
+            background: #4c7cff;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #345edb;
+        }
+
+        /* Chat bubble */
+        #chatBubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4c7cff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        #chatWindow {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: rgba(0,0,0,0.95);
+            width: 300px;
+            max-height: 400px;
+            border-radius: 10px;
+            padding: 15px;
+            display: none;
+            flex-direction: column;
+            color: white;
+            z-index: 1000;
+        }
+
+        #chatWindow input {
+            width: calc(100% - 20px);
+            margin-top: 10px;
+        }
+
+        #chatWindow button {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        #chatMessages {
+            overflow-y: auto;
+            max-height: 250px;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            margin: 5px 0;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .user { background: #345edb; text-align: right; }
+        .bot { background: #222; text-align: left; }
     </style>
 </head>
 
 <body>
 
-<!-- Header -->
 <header id="header">
     <h1>Montefiore Square Reimagined</h1>
-    <p>
-        A youth-centered redesign transforming Harlem’s public plaza<br />
-        into a vibrant, social, and interactive hub.
-    </p>
+    <p>A youth-centered redesign transforming Harlem’s plaza into a vibrant social hub.</p>
 </header>
 
-<!-- Main Content -->
 <section id="main">
 
-    <!-- About -->
-    <section>
+    <section class="fade-section">
         <h2>About the Space</h2>
-        <p>
-            Montefiore Square sits at a major intersection in Harlem with strong pedestrian flow.
-            Despite recent improvements, the space remains underutilized—especially by teens and young people.
-        </p>
-        <p>
-            This project reimagines the plaza as a dynamic, youth-focused environment built around
-            interaction, culture, and safety.
-        </p>
+        <p>Montefiore Square has strong pedestrian flow but lacks youth engagement and interactive design.</p>
     </section>
 
-    <!-- Vision -->
-    <section>
+    <section class="fade-section">
         <h2>Our Vision</h2>
         <ul>
-            <li>🤖 AI Chatbot Hub – Interactive info + surveys</li>
-            <li>🎤 Performance Space – Open mic + live events</li>
-            <li>🪑 Social Seating – Study & hangout areas</li>
-            <li>🌃 Night Lighting – Safe + vibrant evenings</li>
-            <li>🛍️ Pop-Up Market – Food + local vendors</li>
+            <li>🤖 AI Chatbot Hub</li>
+            <li>🎤 Performance Space</li>
+            <li>🪑 Social Seating</li>
+            <li>🌃 Night Lighting</li>
+            <li>🛍️ Pop-Up Market</li>
         </ul>
     </section>
 
-    <!-- Design Image -->
-    <section>
+    <section class="fade-section">
         <h2>Design Proposal</h2>
-        <p>Below is a visualization of the redesigned Montefiore Square:</p>
-        <img src="images/montefiore_mockup.png" alt="Montefiore Square redesign">
+        <img src="images/montefiore_mockup.png">
     </section>
 
-    <!-- Why It Matters -->
-    <section>
-        <h2>Why This Matters</h2>
-        <p>
-            Public spaces shape how communities interact. By designing Montefiore Square
-            for youth engagement, we create a safer, more active, and culturally rich environment.
-        </p>
-        <p>
-            Increased foot traffic leads to stronger businesses, better safety, and a stronger
-            sense of community identity.
-        </p>
-    </section>
-
-    <!-- AI Section -->
-    <section>
-        <h2>AI Integration</h2>
-        <p>
-            An AI-powered chatbot (built using n8n workflows) allows visitors to:
-        </p>
-        <ul>
-            <li>Submit real-time feedback</li>
-            <li>Vote on events</li>
-            <li>Discover activities in the plaza</li>
-        </ul>
-
-        <button onclick="alert('AI Chatbot: What would you like to see in Montefiore Square?')">
-            Talk to AI Assistant
-        </button>
+    <section class="fade-section">
+        <h2>AI Chatbot</h2>
+        <p>Click the bubble at the bottom-right to interact with our AI Assistant.</p>
     </section>
 
 </section>
 
-<!-- Footer -->
 <footer id="footer">
     <p><strong>Help shape the future of Montefiore Square</strong></p>
-    <p>Share your ideas through our AI-powered system.</p>
 
-    <form>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your Email" />
-        <input type="submit" value="Share Your Thoughts" />
+    <form onsubmit="submitForm(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="submit" value="Share Your Thoughts">
     </form>
+
+    <p id="formMessage"></p>
 </footer>
+
+<!-- Chat Bubble -->
+<div id="chatBubble">💬</div>
+<div id="chatWindow">
+    <div id="chatMessages"></div>
+    <input type="text" id="chatInput" placeholder="Ask something...">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+// Scroll fade-in animation
+const sections = document.querySelectorAll('.fade-section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.2 });
+sections.forEach(section => observer.observe(section));
+
+// Chat bubble logic
+const chatBubble = document.getElementById('chatBubble');
+const chatWindow = document.getElementById('chatWindow');
+chatBubble.onclick = () => chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    const chatMessages = document.getElementById('chatMessages');
+    const userMsg = document.createElement('div');
+    userMsg.className = 'message user';
+    userMsg.innerText = msg;
+    chatMessages.appendChild(userMsg);
+
+    // Bot response
+    let response = "That's a great idea! We'll consider it.";
+    const text = msg.toLowerCase();
+    if (text.includes("food")) response = "Food vendors and pop-up markets are a key part of the design!";
+    if (text.includes("music") || text.includes("events")) response = "Live performances and open mic nights will activate the space.";
+    if (text.includes("safe")) response = "Improved lighting and activity increase safety in the plaza.";
+
+    const botMsg = document.createElement('div');
+    botMsg.className = 'message bot';
+    botMsg.innerText = response;
+    chatMessages.appendChild(botMsg);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    input.value = '';
+}
+
+// Form submission
+function submitForm(event) {
+    event.preventDefault();
+    document.getElementById("formMessage").innerText =
+        "✅ Thank you! Your input helps shape the future of Montefiore Square.";
+    event.target.reset();
+}
+</script>
 
 </body>
 </html>
