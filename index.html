@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Montefiore Square Reimagined</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Eventually CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Custom Styling -->
+    <style>
+        body {
+            background-image: url("images/montefiore_mockup.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        #main {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 2em;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+
+        h2 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 0.3em;
+        }
+
+        button {
+            background: #4c7cff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #345edb;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 1em;
+        }
+
+        input {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header id="header">
+    <h1>Montefiore Square Reimagined</h1>
+    <p>
+        A youth-centered redesign transforming Harlem’s public plaza<br />
+        into a vibrant, social, and interactive hub.
+    </p>
+</header>
+
+<!-- Main Content -->
+<section id="main">
+
+    <!-- About -->
+    <section>
+        <h2>About the Space</h2>
+        <p>
+            Montefiore Square sits at a major intersection in Harlem with strong pedestrian flow.
+            Despite recent improvements, the space remains underutilized—especially by teens and young people.
+        </p>
+        <p>
+            This project reimagines the plaza as a dynamic, youth-focused environment built around
+            interaction, culture, and safety.
+        </p>
+    </section>
+
+    <!-- Vision -->
+    <section>
+        <h2>Our Vision</h2>
+        <ul>
+            <li>🤖 AI Chatbot Hub – Interactive info + surveys</li>
+            <li>🎤 Performance Space – Open mic + live events</li>
+            <li>🪑 Social Seating – Study & hangout areas</li>
+            <li>🌃 Night Lighting – Safe + vibrant evenings</li>
+            <li>🛍️ Pop-Up Market – Food + local vendors</li>
+        </ul>
+    </section>
+
+    <!-- Design Image -->
+    <section>
+        <h2>Design Proposal</h2>
+        <p>Below is a visualization of the redesigned Montefiore Square:</p>
+        <img src="images/montefiore_mockup.png" alt="Montefiore Square redesign">
+    </section>
+
+    <!-- Why It Matters -->
+    <section>
+        <h2>Why This Matters</h2>
+        <p>
+            Public spaces shape how communities interact. By designing Montefiore Square
+            for youth engagement, we create a safer, more active, and culturally rich environment.
+        </p>
+        <p>
+            Increased foot traffic leads to stronger businesses, better safety, and a stronger
+            sense of community identity.
+        </p>
+    </section>
+
+    <!-- AI Section -->
+    <section>
+        <h2>AI Integration</h2>
+        <p>
+            An AI-powered chatbot (built using n8n workflows) allows visitors to:
+        </p>
+        <ul>
+            <li>Submit real-time feedback</li>
+            <li>Vote on events</li>
+            <li>Discover activities in the plaza</li>
+        </ul>
+
+        <button onclick="alert('AI Chatbot: What would you like to see in Montefiore Square?')">
+            Talk to AI Assistant
+        </button>
+    </section>
+
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    <p><strong>Help shape the future of Montefiore Square</strong></p>
+    <p>Share your ideas through our AI-powered system.</p>
+
+    <form>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <input type="submit" value="Share Your Thoughts" />
+    </form>
+</footer>
+
+</body>
+</html>
