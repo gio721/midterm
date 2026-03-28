@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="assets/css/main.css">
 
 <style>
-/* Global */
+/* Global styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -40,6 +40,7 @@ section:nth-child(1) { animation-delay: 0.2s; }
 section:nth-child(2) { animation-delay: 0.4s; }
 section:nth-child(3) { animation-delay: 0.6s; }
 section:nth-child(4) { animation-delay: 0.8s; }
+section:nth-child(5) { animation-delay: 1s; }
 
 @keyframes fadeInUp {
     to {
@@ -67,6 +68,7 @@ ul {
 img {
     width: 100%;
     border-radius: 10px;
+    margin-top: 1em;
     transition: transform 0.4s ease;
 }
 
@@ -175,21 +177,32 @@ form:focus-within + .confirmation {
 
 <main>
 
+<!-- Problem Section -->
 <section>
-    <h1>Welcome to Montefiore Square</h1>
-    <p>A vibrant space for teens, students, and youth to connect, relax, and create!</p>
-    <p>Explore events, meet friends, and share your thoughts with us!</p>
+    <h1>Montefiore Square: Current Challenge</h1>
+    <p>Montefiore Square has strong pedestrian flow but lacks youth engagement, interactive elements, and vibrant community spaces. Many teens, students, and residents pass through without meaningful experiences.</p>
 </section>
 
+<!-- Vision Section -->
 <section>
-    <h2>What You Can Do Here</h2>
+    <h2>Our Vision</h2>
     <ul>
-        <li><strong>Live Music & Events</strong>: Enjoy performances, workshops, and community events happening all year round.</li>
-        <li><strong>Interactive Kiosk</strong>: Give feedback and participate in surveys to help shape the future of Montefiore Square.</li>
-        <li><strong>Games & Recreation</strong>: Play table tennis, chess, or just hang out with friends in our open plaza areas.</li>
+        <li>🤖 AI Chatbot Hub for information and surveys</li>
+        <li>🎤 Performance Space for live music and events</li>
+        <li>🪑 Social seating and recreational areas</li>
+        <li>🌃 Night lighting to improve safety and aesthetics</li>
+        <li>🛍️ Pop-up markets for food & crafts</li>
     </ul>
 </section>
 
+<!-- Proposal Section -->
+<section>
+    <h2>Design Proposal</h2>
+    <p>The proposed redesign transforms Montefiore Square into a pedestrian-friendly, youth-centered plaza. It encourages social interaction, creativity, and community engagement through flexible spaces, seating, and event areas.</p>
+    <img src="images/montefiore_mockup.png" alt="Reimagined Montefiore Square">
+</section>
+
+<!-- Form Section -->
 <section>
     <h2>Share Your Thoughts</h2>
     <form>
@@ -201,14 +214,16 @@ form:focus-within + .confirmation {
     <div class="confirmation">✅ Thank you! Your input helps shape the future of Montefiore Square.</div>
 </section>
 
+<!-- Chatbot Section -->
 <section>
     <h2>Ask Our Chatbot</h2>
     <input type="checkbox" id="chat-toggle">
     <label for="chat-toggle">💬</label>
     <div id="chat-box">
-        <p>Hello! I’m your AI assistant. You can imagine responses like:</p>
+        <p>Hello! I’m your AI assistant. Sample interactions:</p>
         <p><em>User:</em> Can we have music here?<br><em>Bot:</em> Live performances and open mic nights will activate the space.</p>
         <p><em>User:</em> Food vendors?<br><em>Bot:</em> Pop-up markets and food trucks are included in the design!</p>
+        <p><em>User:</em> Safe at night?<br><em>Bot:</em> Night lighting and active spaces improve safety.</p>
     </div>
 </section>
 
